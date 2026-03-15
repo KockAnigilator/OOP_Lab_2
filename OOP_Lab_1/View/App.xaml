@@ -5,6 +5,6 @@
              xmlns:loc="clr-namespace:View.Localization"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <loc:ResxLocalizationProvider x:Key="Loc" />
+        <loc:ExternalLibLocalizationProvider x:Key="Loc" />
     </Application.Resources>
 </Application>

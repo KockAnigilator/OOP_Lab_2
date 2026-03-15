@@ -18,7 +18,7 @@ namespace View.Views
 
         private void ShowMessage_Click(object sender, RoutedEventArgs e)
         {
-            var message = ResxLocalizationProvider.Instance.GetString("Message_DataSaved");
+            var message = ExternalLibLocalizationProvider.Instance.GetString("Message_DataSaved");
             MessageBox.Show(message);
         }
     }

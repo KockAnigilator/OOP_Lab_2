@@ -20,7 +20,7 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
-            var provider = ResxLocalizationProvider.Instance;
+            var provider = ExternalLibLocalizationProvider.Instance;
             if (provider.CurrentCulture.Name.StartsWith("en"))
                 LanguageComboBox.SelectedIndex = 1;
             else
@@ -31,7 +31,7 @@ namespace View
         {
             if (LanguageComboBox.SelectedItem is ComboBoxItem item && item.Tag is string tag)
             {
-                ResxLocalizationProvider.Instance.CurrentCulture = new CultureInfo(tag);
+                ExternalLibLocalizationProvider.Instance.CurrentCulture = new CultureInfo(tag);
             }
         }
     }
