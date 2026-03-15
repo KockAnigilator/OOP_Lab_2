@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Демо привязки MVVM</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Tab_DefaultBinding" xml:space="preserve">
+    <value>Привязка по умолчанию</value>
+  </data>
+  <data name="Tab_TwoWayBinding" xml:space="preserve">
+    <value>Двухсторонняя привязка</value>
+  </data>
+  <data name="Tab_OneTimeBinding" xml:space="preserve">
+    <value>Одноразовая привязка</value>
+  </data>
+  <data name="Tab_OneWayBinding" xml:space="preserve">
+    <value>Односторонняя привязка</value>
+  </data>
+  <data name="Tab_Triggers" xml:space="preserve">
+    <value>Триггеры</value>
+  </data>
+  <data name="DefaultBinding_Header" xml:space="preserve">
+    <value>DefaultBinding (TextBox, UpdateSourceTrigger по умолчанию — LostFocus)</value>
+  </data>
+  <data name="DefaultBinding_Description" xml:space="preserve">
+    <value>Сравнение: прямая привязка к свойству окна и привязка к свойству ViewModel.</value>
+  </data>
+  <data name="DefaultBinding_WindowBinding" xml:space="preserve">
+    <value>Прямая привязка к свойству окна</value>
+  </data>
+  <data name="DefaultBinding_ViewModelBinding" xml:space="preserve">
+    <value>Привязка через ViewModel</value>
+  </data>
+  <data name="DefaultBinding_CurrentWindowValue" xml:space="preserve">
+    <value>Текущее значение свойства окна:</value>
+  </data>
+  <data name="DefaultBinding_CurrentViewModelValue" xml:space="preserve">
+    <value>Текущее значение свойства ViewModel:</value>
+  </data>
+  <data name="DefaultBinding_LastUpdated" xml:space="preserve">
+    <value>Последнее обновление: {0:T}</value>
+  </data>
+  <data name="Message_DataSaved" xml:space="preserve">
+    <value>Данные успешно сохранены.</value>
+  </data>
+  <data name="Button_ShowMessage" xml:space="preserve">
+    <value>Показать сообщение (RESX)</value>
+  </data>
+  <data name="Triggers_Placeholder" xml:space="preserve">
+    <value>Демонстрация триггеров будет реализована здесь.</value>
+  </data>
+  <data name="OneWay_Placeholder" xml:space="preserve">
+    <value>Демонстрация односторонней привязки будет реализована здесь.</value>
+  </data>
+</root>

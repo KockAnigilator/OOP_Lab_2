@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:loc="clr-namespace:View.Localization"
              mc:Ignorable="d">
     <Grid Margin="16">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -14,11 +16,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="DefaultBinding (TextBox, UpdateSourceTrigger по умолчанию — LostFocus)"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Header}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="Сравнение: прямая привязка к свойству окна и привязка к свойству ViewModel."
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -27,7 +29,7 @@
         <!-- Прямая привязка к свойству окна -->
         <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="Прямая привязка к свойству окна"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_WindowBinding}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
@@ -45,7 +47,7 @@
                     </TextBox.ToolTip>
                 </TextBox>
 
-                <TextBlock Text="Текущее значение свойства окна:"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_CurrentWindowValue}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBlock Text="{Binding TextFromWindow, RelativeSource={RelativeSource AncestorType=Window}}"
@@ -57,7 +59,7 @@
         <!-- Привязка через ViewModel -->
         <Border Grid.Row="2" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="Привязка через ViewModel"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_ViewModelBinding}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
@@ -74,7 +76,7 @@
                     </TextBox.ToolTip>
                 </TextBox>
 
-                <TextBlock Text="Текущее значение свойства ViewModel:"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_CurrentViewModelValue}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBlock Text="{Binding ViewModelText}"
@@ -88,7 +90,10 @@
             </StackPanel>
         </Border>
 
-        <TextBlock Grid.Row="3"
+        <Button Grid.Row="3" Content="{Binding Source={StaticResource Loc}, Path=Button_ShowMessage}" Margin="0,0,0,8" Padding="8,4"
+                Click="ShowMessage_Click" HorizontalAlignment="Left" />
+
+        <TextBlock Grid.Row="4"
                    Margin="0 8 0 0"
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"

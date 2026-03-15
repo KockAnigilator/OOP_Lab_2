@@ -1,4 +1,6 @@
+using System.Windows;
 using System.Windows.Controls;
+using View.Localization;
 using View.ViewModels;
 
 namespace View.Views
@@ -12,6 +14,12 @@ namespace View.Views
         {
             InitializeComponent();
             DataContext = new DefaultBindingViewModel();
+        }
+
+        private void ShowMessage_Click(object sender, RoutedEventArgs e)
+        {
+            var message = ResxLocalizationProvider.Instance.GetString("Message_DataSaved");
+            MessageBox.Show(message);
         }
     }
 }

@@ -4,26 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:View.Views"
+        xmlns:loc="clr-namespace:View.Localization"
         mc:Ignorable="d"
-        Title="MVVM Binding Demo"
+        Title="{Binding Source={StaticResource Loc}, Path=WindowTitle}"
         Height="450"
         Width="900"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF1E2533">
-        <TabControl Margin="12">
-            <TabItem Header="DefaultBinding">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="12,8">
+            <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Language}" 
+                       Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0" />
+            <ComboBox x:Name="LanguageComboBox" Width="120" 
+                      SelectedValuePath="Name"
+                      SelectionChanged="LanguageComboBox_SelectionChanged">
+                <ComboBoxItem Content="Русский" Tag="ru" />
+                <ComboBoxItem Content="English" Tag="en" />
+            </ComboBox>
+        </StackPanel>
+        <TabControl Grid.Row="1" Margin="12">
+            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_DefaultBinding}">
                 <views:DefaultBindingView />
             </TabItem>
-            <TabItem Header="TwoWayBinding">
+            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_TwoWayBinding}">
                 <views:TwoWayBindingView />
             </TabItem>
-            <TabItem Header="OneTimeBinding">
+            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_OneTimeBinding}">
                 <views:OneTimeBindingView />
             </TabItem>
-            <TabItem Header="OneWayBinding">
+            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_OneWayBinding}">
                 <views:OneWayBindingView />
             </TabItem>
-            <TabItem Header="Triggers">
+            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_Triggers}">
                 <views:TriggersView />
             </TabItem>
         </TabControl>

@@ -1,17 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using View.Localization;
 
 namespace View
 {
@@ -29,6 +20,19 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
+            var provider = ResxLocalizationProvider.Instance;
+            if (provider.CurrentCulture.Name.StartsWith("en"))
+                LanguageComboBox.SelectedIndex = 1;
+            else
+                LanguageComboBox.SelectedIndex = 0;
+        }
+
+        private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LanguageComboBox.SelectedItem is ComboBoxItem item && item.Tag is string tag)
+            {
+                ResxLocalizationProvider.Instance.CurrentCulture = new CultureInfo(tag);
+            }
         }
     }
 }

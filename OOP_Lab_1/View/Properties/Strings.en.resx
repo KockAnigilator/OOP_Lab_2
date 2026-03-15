@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>MVVM Binding Demo</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Tab_DefaultBinding" xml:space="preserve">
+    <value>Default Binding</value>
+  </data>
+  <data name="Tab_TwoWayBinding" xml:space="preserve">
+    <value>Two-Way Binding</value>
+  </data>
+  <data name="Tab_OneTimeBinding" xml:space="preserve">
+    <value>One-Time Binding</value>
+  </data>
+  <data name="Tab_OneWayBinding" xml:space="preserve">
+    <value>One-Way Binding</value>
+  </data>
+  <data name="Tab_Triggers" xml:space="preserve">
+    <value>Triggers</value>
+  </data>
+  <data name="DefaultBinding_Header" xml:space="preserve">
+    <value>DefaultBinding (TextBox, default UpdateSourceTrigger — LostFocus)</value>
+  </data>
+  <data name="DefaultBinding_Description" xml:space="preserve">
+    <value>Comparison: direct binding to window property and binding to ViewModel property.</value>
+  </data>
+  <data name="DefaultBinding_WindowBinding" xml:space="preserve">
+    <value>Direct binding to window property</value>
+  </data>
+  <data name="DefaultBinding_ViewModelBinding" xml:space="preserve">
+    <value>Binding via ViewModel</value>
+  </data>
+  <data name="DefaultBinding_CurrentWindowValue" xml:space="preserve">
+    <value>Current window property value:</value>
+  </data>
+  <data name="DefaultBinding_CurrentViewModelValue" xml:space="preserve">
+    <value>Current ViewModel property value:</value>
+  </data>
+  <data name="DefaultBinding_LastUpdated" xml:space="preserve">
+    <value>Last updated: {0:T}</value>
+  </data>
+  <data name="Message_DataSaved" xml:space="preserve">
+    <value>Data saved successfully.</value>
+  </data>
+  <data name="Button_ShowMessage" xml:space="preserve">
+    <value>Show message (RESX)</value>
+  </data>
+  <data name="Triggers_Placeholder" xml:space="preserve">
+    <value>Triggers demo will be implemented here.</value>
+  </data>
+  <data name="OneWay_Placeholder" xml:space="preserve">
+    <value>One-way binding demo will be implemented here.</value>
+  </data>
+</root>
