@@ -10,7 +10,10 @@ namespace View
     {
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
-            XamlLocalizationProvider.Instance.EnsureLanguageLoaded();
+            var provider = XamlLocalizationProvider.Instance;
+            provider.EnsureLanguageLoaded();
+            // Привязки должны использовать тот же экземпляр, что и код переключения языка
+            Resources["Loc"] = provider;
         }
     }
 }
