@@ -1,0 +1,101 @@
+<UserControl x:Class="View.Views.DefaultBindingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
+            <StackPanel>
+                <TextBlock Text="DefaultBinding (TextBox, UpdateSourceTrigger по умолчанию — LostFocus)"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           Margin="0 0 0 4" />
+                <TextBlock Text="Сравнение: прямая привязка к свойству окна и привязка к свойству ViewModel."
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+            </StackPanel>
+        </Border>
+
+        <!-- Прямая привязка к свойству окна -->
+        <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
+            <StackPanel>
+                <TextBlock Text="Прямая привязка к свойству окна"
+                           Foreground="#FF9CC1FF"
+                           FontWeight="SemiBold" />
+
+                <TextBox Margin="0 6 0 4"
+                         Height="28"
+                         Background="#FF101726"
+                         Foreground="White"
+                         BorderBrush="#FF3D5A80"
+                         BorderThickness="1"
+                         Text="{Binding TextFromWindow,
+                                        RelativeSource={RelativeSource AncestorType=Window}}">
+                    <TextBox.ToolTip>
+                        <TextBlock Text="Источник обновляется только при потере фокуса (LostFocus — значение по умолчанию)."
+                                   TextWrapping="Wrap" />
+                    </TextBox.ToolTip>
+                </TextBox>
+
+                <TextBlock Text="Текущее значение свойства окна:"
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+                <TextBlock Text="{Binding TextFromWindow, RelativeSource={RelativeSource AncestorType=Window}}"
+                           Foreground="White"
+                           FontWeight="Bold" />
+            </StackPanel>
+        </Border>
+
+        <!-- Привязка через ViewModel -->
+        <Border Grid.Row="2" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
+            <StackPanel>
+                <TextBlock Text="Привязка через ViewModel"
+                           Foreground="#FF9CC1FF"
+                           FontWeight="SemiBold" />
+
+                <TextBox Margin="0 6 0 4"
+                         Height="28"
+                         Background="#FF101726"
+                         Foreground="White"
+                         BorderBrush="#FF3D5A80"
+                         BorderThickness="1"
+                         Text="{Binding ViewModelText}">
+                    <TextBox.ToolTip>
+                        <TextBlock Text="Та же привязка по умолчанию (LostFocus), но источник — свойство ViewModel."
+                                   TextWrapping="Wrap" />
+                    </TextBox.ToolTip>
+                </TextBox>
+
+                <TextBlock Text="Текущее значение свойства ViewModel:"
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+                <TextBlock Text="{Binding ViewModelText}"
+                           Foreground="White"
+                           FontWeight="Bold" />
+
+                <TextBlock Margin="0 6 0 0"
+                           Text="{Binding LastUpdated, StringFormat='Последнее обновление: {0:T}'}"
+                           Foreground="#FFB0B8C5"
+                           FontSize="11" />
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="3"
+                   Margin="0 8 0 0"
+                   TextWrapping="Wrap"
+                   Foreground="#FF8A96A8"
+                   FontSize="11">
+            Обратите внимание: пока TextBox находится в фокусе, свойство источника НЕ обновляется.
+            Значение меняется только при потере фокуса (клик вне поля или переход на другой контрол).
+        </TextBlock>
+    </Grid>
+</UserControl>
+
