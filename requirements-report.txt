@@ -1,2 +1,0 @@
-# Для генерации отчёта ЛР №2 (generate_report.py)
-python-docx>=0.8.11
