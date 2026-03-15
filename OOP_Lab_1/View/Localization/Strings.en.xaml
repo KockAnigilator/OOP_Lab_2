@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="WindowTitle">MVVM Binding Demo</sys:String>
+    <sys:String x:Key="Language">Language</sys:String>
+    <sys:String x:Key="Tab_DefaultBinding">Default Binding</sys:String>
+    <sys:String x:Key="Tab_TwoWayBinding">Two-Way Binding</sys:String>
+    <sys:String x:Key="Tab_OneTimeBinding">One-Time Binding</sys:String>
+    <sys:String x:Key="Tab_OneWayBinding">One-Way Binding</sys:String>
+    <sys:String x:Key="Tab_Triggers">Triggers</sys:String>
+    <sys:String x:Key="DefaultBinding_Header">DefaultBinding (TextBox, default UpdateSourceTrigger — LostFocus)</sys:String>
+    <sys:String x:Key="DefaultBinding_Description">Comparison: direct binding to window property and binding to ViewModel property.</sys:String>
+    <sys:String x:Key="DefaultBinding_WindowBinding">Direct binding to window property</sys:String>
+    <sys:String x:Key="DefaultBinding_ViewModelBinding">Binding via ViewModel</sys:String>
+    <sys:String x:Key="DefaultBinding_CurrentWindowValue">Current window property value:</sys:String>
+    <sys:String x:Key="DefaultBinding_CurrentViewModelValue">Current ViewModel property value:</sys:String>
+    <sys:String x:Key="DefaultBinding_LastUpdated">Last updated: {0:T}</sys:String>
+    <sys:String x:Key="Message_DataSaved">Data saved successfully.</sys:String>
+    <sys:String x:Key="Button_ShowMessage">Show message (XAML)</sys:String>
+    <sys:String x:Key="Triggers_Placeholder">Triggers demo will be implemented here.</sys:String>
+    <sys:String x:Key="OneWay_Placeholder">One-way binding demo will be implemented here.</sys:String>
+</ResourceDictionary>

@@ -75,6 +75,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Localization\Strings.ru.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Localization\Strings.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +96,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Localization\ResxLocalizationProvider.cs" />
+    <Compile Include="Localization\XamlLocalizationProvider.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DefaultBindingViewModel.cs" />
     <Compile Include="ViewModels\OneTimeBindingViewModel.cs" />
