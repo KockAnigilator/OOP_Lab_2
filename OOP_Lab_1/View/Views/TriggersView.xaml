@@ -38,8 +38,8 @@
                 <TextBlock Foreground="#FF9CC1FF"
                            FontWeight="SemiBold"
                            Text="{Binding Source={StaticResource Loc}, Path=Triggers_ProgressCaption}" />
-                <Slider Margin="0 6 0 6" Minimum="0" Maximum="100" Value="{Binding Load}" IsEnabled="False" />
-                <ProgressBar Height="14" Minimum="0" Maximum="100" Value="{Binding Load}">
+                <Slider Margin="0 6 0 6" Minimum="0" Maximum="100" Value="{Binding Load, Mode=OneWay}" IsEnabled="False" />
+                <ProgressBar Height="14" Minimum="0" Maximum="100" Value="{Binding Load, Mode=OneWay}">
                     <ProgressBar.Style>
                         <Style TargetType="ProgressBar">
                             <Setter Property="Foreground" Value="#FF4A7BFF" />

@@ -13,6 +13,8 @@ namespace LocalizationLib
         {
             ["WindowTitle"] = "Демо привязки MVVM",
             ["Language"] = "Язык",
+            ["Language_Russian"] = "Русский",
+            ["Language_English"] = "Английский",
             ["Tab_DefaultBinding"] = "Привязка по умолчанию",
             ["Tab_TwoWayBinding"] = "Двухсторонняя привязка",
             ["Tab_OneTimeBinding"] = "Одноразовая привязка",
@@ -76,6 +78,8 @@ namespace LocalizationLib
         {
             ["WindowTitle"] = "MVVM Binding Demo",
             ["Language"] = "Language",
+            ["Language_Russian"] = "Russian",
+            ["Language_English"] = "English",
             ["Tab_DefaultBinding"] = "Default Binding",
             ["Tab_TwoWayBinding"] = "Two-Way Binding",
             ["Tab_OneTimeBinding"] = "One-Time Binding",

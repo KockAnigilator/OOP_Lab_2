@@ -21,8 +21,8 @@
             <ComboBox x:Name="LanguageComboBox" Width="120" 
                       SelectedValuePath="Name"
                       SelectionChanged="LanguageComboBox_SelectionChanged">
-                <ComboBoxItem Content="Русский" Tag="ru" />
-                <ComboBoxItem Content="English" Tag="en" />
+                <ComboBoxItem Content="{Binding Source={StaticResource Loc}, Path=Language_Russian}" Tag="ru" />
+                <ComboBoxItem Content="{Binding Source={StaticResource Loc}, Path=Language_English}" Tag="en" />
             </ComboBox>
         </StackPanel>
         <TabControl Grid.Row="1" Margin="12">

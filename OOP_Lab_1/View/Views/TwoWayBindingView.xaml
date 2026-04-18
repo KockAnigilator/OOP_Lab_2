@@ -75,7 +75,7 @@
                              BorderThickness="1"
                              Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Margin="0 4 0 0" Foreground="White">
-                        <Run Text="{Binding Source={StaticResource Loc}, Path=TwoWay_NameCurrentFormat}" />
+                        <Run Text="{Binding Source={StaticResource Loc}, Path=TwoWay_NameCurrentFormat, Mode=OneWay}" />
                         <Run Text=": " />
                         <Run Text="{Binding Name}" />
                     </TextBlock>

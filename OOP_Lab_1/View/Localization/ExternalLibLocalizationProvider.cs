@@ -32,6 +32,8 @@ namespace View.Localization
 
         public string WindowTitle => GetResource("WindowTitle");
         public string Language => GetResource("Language");
+        public string Language_Russian => GetResource("Language_Russian");
+        public string Language_English => GetResource("Language_English");
         public string Tab_DefaultBinding => GetResource("Tab_DefaultBinding");
         public string Tab_TwoWayBinding => GetResource("Tab_TwoWayBinding");
         public string Tab_OneTimeBinding => GetResource("Tab_OneTimeBinding");
