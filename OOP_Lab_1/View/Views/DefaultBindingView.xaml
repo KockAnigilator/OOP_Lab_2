@@ -42,7 +42,7 @@
                          Text="{Binding TextFromWindow,
                                         RelativeSource={RelativeSource AncestorType=Window}}">
                     <TextBox.ToolTip>
-                        <TextBlock Text="Источник обновляется только при потере фокуса (LostFocus — значение по умолчанию)."
+                        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Tooltip_Window}"
                                    TextWrapping="Wrap" />
                     </TextBox.ToolTip>
                 </TextBox>
@@ -71,7 +71,7 @@
                          BorderThickness="1"
                          Text="{Binding ViewModelText}">
                     <TextBox.ToolTip>
-                        <TextBlock Text="Та же привязка по умолчанию (LostFocus), но источник — свойство ViewModel."
+                        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Tooltip_ViewModel}"
                                    TextWrapping="Wrap" />
                     </TextBox.ToolTip>
                 </TextBox>
@@ -84,7 +84,7 @@
                            FontWeight="Bold" />
 
                 <TextBlock Margin="0 6 0 0"
-                           Text="{Binding LastUpdated, StringFormat='Последнее обновление: {0:T}'}"
+                           Text="{Binding LastUpdated, StringFormat={}{0:T}}"
                            Foreground="#FFB0B8C5"
                            FontSize="11" />
             </StackPanel>
@@ -97,10 +97,8 @@
                    Margin="0 8 0 0"
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"
-                   FontSize="11">
-            Обратите внимание: пока TextBox находится в фокусе, свойство источника НЕ обновляется.
-            Значение меняется только при потере фокуса (клик вне поля или переход на другой контрол).
-        </TextBlock>
+                   FontSize="11"
+                   Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Note}" />
     </Grid>
 </UserControl>
 

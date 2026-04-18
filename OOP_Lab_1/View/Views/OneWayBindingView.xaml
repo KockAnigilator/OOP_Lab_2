@@ -5,10 +5,65 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:loc="clr-namespace:View.Localization"
              mc:Ignorable="d">
-    <Grid>
-        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_Placeholder}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center" />
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
+            <StackPanel>
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_Title}"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           Margin="0 0 0 4" />
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_Description}"
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
+            <StackPanel>
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_SourceValue}"
+                           Foreground="#FF9CC1FF"
+                           FontWeight="SemiBold" />
+                <TextBlock Margin="0 6 0 10"
+                           Text="{Binding SourceText, Mode=OneWay}"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Bold" />
+
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_BoundValue}"
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+                <TextBlock Margin="0 4 0 10"
+                           Text="{Binding SourceText, Mode=OneWay}"
+                           Foreground="White" />
+
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_UserInput}"
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+                <TextBox Margin="0 4 0 0"
+                         Height="28"
+                         Background="#FF101726"
+                         Foreground="White"
+                         BorderBrush="#FF3D5A80"
+                         BorderThickness="1" />
+                <TextBlock Margin="0 4 0 0"
+                           Text="{Binding Source={StaticResource Loc}, Path=OneWay_UserInputHint}"
+                           Foreground="#FF8A96A8"
+                           FontSize="11" />
+            </StackPanel>
+        </Border>
+
+        <TextBlock Grid.Row="2"
+                   Margin="0 8 0 0"
+                   TextWrapping="Wrap"
+                   Foreground="#FF8A96A8"
+                   FontSize="11"
+                   Text="{Binding Source={StaticResource Loc}, Path=OneWay_Note}" />
     </Grid>
 </UserControl>
 

@@ -5,10 +5,145 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:loc="clr-namespace:View.Localization"
              mc:Ignorable="d">
-    <Grid>
-        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Triggers_Placeholder}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center" />
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
+            <StackPanel>
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Triggers_Title}"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           Margin="0 0 0 4" />
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Triggers_Description}"
+                           Foreground="#FFB0B8C5"
+                           FontSize="12" />
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 0 8">
+            <CheckBox IsChecked="{Binding IsAlertsEnabled, Mode=TwoWay}" VerticalAlignment="Center" />
+            <TextBlock Margin="8 0 0 0"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       Text="{Binding Source={StaticResource Loc}, Path=Triggers_EnableAlerts}" />
+        </StackPanel>
+
+        <Border Grid.Row="2" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
+            <StackPanel>
+                <TextBlock Foreground="#FF9CC1FF"
+                           FontWeight="SemiBold"
+                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_ProgressCaption}" />
+                <Slider Margin="0 6 0 6" Minimum="0" Maximum="100" Value="{Binding Load}" IsEnabled="False" />
+                <ProgressBar Height="14" Minimum="0" Maximum="100" Value="{Binding Load}">
+                    <ProgressBar.Style>
+                        <Style TargetType="ProgressBar">
+                            <Setter Property="Foreground" Value="#FF4A7BFF" />
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" Value="0.95" />
+                                </Trigger>
+                                <DataTrigger Binding="{Binding Load}" Value="80">
+                                    <Setter Property="Foreground" Value="#FFF09B2B" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ProgressBar.Style>
+                </ProgressBar>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="3" Padding="12" CornerRadius="6">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="#FF1B2433" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsAlertsEnabled}" Value="True" />
+                                <Condition Binding="{Binding IsOverheated}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Background" Value="#FF5A2A2A" />
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <StackPanel>
+                <TextBlock Foreground="#FFB0B8C5"
+                           FontSize="12"
+                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_StatusCaption}" />
+                <TextBlock Foreground="White">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Text" Value="{Binding Source={StaticResource Loc}, Path=Triggers_Ready}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsWorking}" Value="True">
+                                    <Setter Property="Text" Value="{Binding Source={StaticResource Loc}, Path=Triggers_Working}" />
+                                    <Setter Property="Foreground" Value="#FFF09B2B" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Margin="0 6 0 0"
+                           Foreground="White"
+                           Text="{Binding Load, StringFormat={}{0}%}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontWeight" Value="Normal" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsWorking}" Value="True">
+                                    <Setter Property="FontWeight" Value="Bold" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Margin="0 6 0 0"
+                           Foreground="#FFB0B8C5"
+                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_TempCaption}" />
+                <TextBlock Foreground="White" FontSize="16" Text="{Binding Temperature, StringFormat={}{0} C}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsOverheated}" Value="True">
+                                    <Setter Property="Foreground" Value="#FFFF8A8A" />
+                                    <Setter Property="Text" Value="{Binding Source={StaticResource Loc}, Path=Triggers_Overheat}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Margin="0 8 0 0"
+                           FontSize="11"
+                           Foreground="#FFFFB3B3"
+                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_Warning}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding IsAlertsEnabled}" Value="True" />
+                                        <Condition Binding="{Binding IsWorking}" Value="True" />
+                                        <Condition Binding="{Binding IsOverheated}" Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>
 

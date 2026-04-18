@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:loc="clr-namespace:View.Localization"
              mc:Ignorable="d">
     <Grid Margin="16">
         <Grid.RowDefinitions>
@@ -13,11 +14,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="OneTimeBinding (одноразовая привязка)"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Title}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="Дата запуска берётся один раз (Mode=OneTime), далее изменения источника не отражаются в UI."
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -25,26 +26,26 @@
 
         <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="Сравнение OneTime и обычной OneWay-привязки"
+                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Compare}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
                 <StackPanel Margin="0 8 0 4">
-                    <TextBlock Text="Дата запуска (OneTime)"
+                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Start}"
                                Foreground="#FFB0B8C5"
                                FontSize="12" />
                     <TextBlock FontSize="16"
                                Foreground="White"
-                               Text="{Binding StartTime, Mode=OneTime, StringFormat='Запуск: {0:G}'}" />
+                               Text="{Binding StartTime, Mode=OneTime, StringFormat={}{0:G}}" />
                 </StackPanel>
 
                 <StackPanel Margin="0 8 0 4">
-                    <TextBlock Text="Текущее время (обновляется каждую секунду)"
+                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Current}"
                                Foreground="#FFB0B8C5"
                                FontSize="12" />
                     <TextBlock FontSize="16"
                                Foreground="White"
-                               Text="{Binding CurrentTime, StringFormat='Сейчас: {0:T}'}" />
+                               Text="{Binding CurrentTime, StringFormat={}{0:T}}" />
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -53,11 +54,8 @@
                    Margin="0 8 0 0"
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"
-                   FontSize="11">
-            Обратите внимание: значение &quot;Дата запуска (OneTime)&quot; остаётся неизменным,
-            даже если источник (StartTime) в ViewModel был бы изменён после загрузки.
-            UI считывает его только один раз при создании привязки.
-        </TextBlock>
+                   FontSize="11"
+                   Text="{Binding Source={StaticResource Loc}, Path=OneTime_Note}" />
     </Grid>
 </UserControl>
 
