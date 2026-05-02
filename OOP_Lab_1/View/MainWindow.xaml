@@ -6,7 +6,7 @@
         xmlns:views="clr-namespace:View.Views"
         xmlns:loc="clr-namespace:View.Localization"
         mc:Ignorable="d"
-        Title="{Binding Source={StaticResource Loc}, Path=WindowTitle}"
+        Title="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=WindowTitle}"
         Height="450"
         Width="900"
         WindowStartupLocation="CenterScreen">
@@ -16,29 +16,29 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="12,8">
-            <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Language}" 
+            <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Language}" 
                        Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0" />
             <ComboBox x:Name="LanguageComboBox" Width="120" 
                       SelectedValuePath="Name"
                       SelectionChanged="LanguageComboBox_SelectionChanged">
-                <ComboBoxItem Content="{Binding Source={StaticResource Loc}, Path=Language_Russian}" Tag="ru" />
-                <ComboBoxItem Content="{Binding Source={StaticResource Loc}, Path=Language_English}" Tag="en" />
+                <ComboBoxItem Content="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Language_Russian}" Tag="ru" />
+                <ComboBoxItem Content="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Language_English}" Tag="en" />
             </ComboBox>
         </StackPanel>
         <TabControl Grid.Row="1" Margin="12">
-            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_DefaultBinding}">
+            <TabItem Header="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Tab_DefaultBinding}">
                 <views:DefaultBindingView />
             </TabItem>
-            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_TwoWayBinding}">
+            <TabItem Header="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Tab_TwoWayBinding}">
                 <views:TwoWayBindingView />
             </TabItem>
-            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_OneTimeBinding}">
+            <TabItem Header="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Tab_OneTimeBinding}">
                 <views:OneTimeBindingView />
             </TabItem>
-            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_OneWayBinding}">
+            <TabItem Header="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Tab_OneWayBinding}">
                 <views:OneWayBindingView />
             </TabItem>
-            <TabItem Header="{Binding Source={StaticResource Loc}, Path=Tab_Triggers}">
+            <TabItem Header="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Tab_Triggers}">
                 <views:TriggersView />
             </TabItem>
         </TabControl>

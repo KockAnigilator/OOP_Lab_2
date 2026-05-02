@@ -20,11 +20,28 @@ namespace View
         public MainWindow()
         {
             InitializeComponent();
+
+            // Устанавливаем DataContext окна на провайдер локализации
+            // Это позволит привязкам в окне работать без StaticResource
+            DataContext = ExternalLibLocalizationProvider.Instance;
+
+            // Синхронизируем ComboBox с текущей культурой
+            SyncLanguageComboBox();
+        }
+
+        private void SyncLanguageComboBox()
+        {
             var provider = ExternalLibLocalizationProvider.Instance;
-            if (provider.CurrentCulture.Name.StartsWith("en"))
-                LanguageComboBox.SelectedIndex = 1;
-            else
-                LanguageComboBox.SelectedIndex = 0;
+            var cultureName = provider.CurrentCulture.Name.StartsWith("en") ? "en" : "ru";
+
+            foreach (ComboBoxItem item in LanguageComboBox.Items)
+            {
+                if (item.Tag is string tag && tag == cultureName)
+                {
+                    LanguageComboBox.SelectedItem = item;
+                    break;
+                }
+            }
         }
 
         private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

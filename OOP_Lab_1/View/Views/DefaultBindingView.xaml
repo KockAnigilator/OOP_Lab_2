@@ -16,11 +16,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Header}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_Header}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Description}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -29,7 +29,7 @@
         <!-- Прямая привязка к свойству окна -->
         <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_WindowBinding}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_WindowBinding}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
@@ -42,12 +42,12 @@
                          Text="{Binding TextFromWindow,
                                         RelativeSource={RelativeSource AncestorType=Window}}">
                     <TextBox.ToolTip>
-                        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Tooltip_Window}"
+                        <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_Tooltip_Window}"
                                    TextWrapping="Wrap" />
                     </TextBox.ToolTip>
                 </TextBox>
 
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_CurrentWindowValue}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_CurrentWindowValue}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBlock Text="{Binding TextFromWindow, RelativeSource={RelativeSource AncestorType=Window}}"
@@ -59,7 +59,7 @@
         <!-- Привязка через ViewModel -->
         <Border Grid.Row="2" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_ViewModelBinding}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_ViewModelBinding}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
@@ -71,12 +71,12 @@
                          BorderThickness="1"
                          Text="{Binding ViewModelText}">
                     <TextBox.ToolTip>
-                        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Tooltip_ViewModel}"
+                        <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_Tooltip_ViewModel}"
                                    TextWrapping="Wrap" />
                     </TextBox.ToolTip>
                 </TextBox>
 
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_CurrentViewModelValue}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_CurrentViewModelValue}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBlock Text="{Binding ViewModelText}"
@@ -90,7 +90,7 @@
             </StackPanel>
         </Border>
 
-        <Button Grid.Row="3" Content="{Binding Source={StaticResource Loc}, Path=Button_ShowMessage}" Margin="0,0,0,8" Padding="8,4"
+        <Button Grid.Row="3" Content="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Button_ShowMessage}" Margin="0,0,0,8" Padding="8,4"
                 Click="ShowMessage_Click" HorizontalAlignment="Left" />
 
         <TextBlock Grid.Row="4"
@@ -98,7 +98,7 @@
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"
                    FontSize="11"
-                   Text="{Binding Source={StaticResource Loc}, Path=DefaultBinding_Note}" />
+                   Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=DefaultBinding_Note}" />
     </Grid>
 </UserControl>
 

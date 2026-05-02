@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Globalization;
+using System.Threading;
 using LocalizationLib;
 
 namespace View.Localization
@@ -22,7 +23,14 @@ namespace View.Localization
             {
                 if (_currentCulture.Equals(value))
                     return;
+
                 _currentCulture = value;
+
+                // 👇 Критически важно: меняем культуру потока для форматирования и ResourceManager
+                Thread.CurrentThread.CurrentCulture = value;
+                Thread.CurrentThread.CurrentUICulture = value;
+
+                // Уведомляем об изменении всех свойств
                 OnPropertyChanged(nameof(CurrentCulture));
                 OnPropertyChanged(string.Empty);
             }

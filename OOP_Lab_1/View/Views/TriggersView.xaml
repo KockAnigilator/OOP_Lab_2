@@ -15,11 +15,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Triggers_Title}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_Title}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=Triggers_Description}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -30,14 +30,14 @@
             <TextBlock Margin="8 0 0 0"
                        VerticalAlignment="Center"
                        Foreground="White"
-                       Text="{Binding Source={StaticResource Loc}, Path=Triggers_EnableAlerts}" />
+                       Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_EnableAlerts}" />
         </StackPanel>
 
         <Border Grid.Row="2" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
                 <TextBlock Foreground="#FF9CC1FF"
                            FontWeight="SemiBold"
-                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_ProgressCaption}" />
+                           Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_ProgressCaption}" />
                 <Slider Margin="0 6 0 6" Minimum="0" Maximum="100" Value="{Binding Load, Mode=OneWay}" IsEnabled="False" />
                 <ProgressBar Height="14" Minimum="0" Maximum="100" Value="{Binding Load, Mode=OneWay}">
                     <ProgressBar.Style>
@@ -76,14 +76,14 @@
             <StackPanel>
                 <TextBlock Foreground="#FFB0B8C5"
                            FontSize="12"
-                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_StatusCaption}" />
+                           Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_StatusCaption}" />
                 <TextBlock Foreground="White">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
-                            <Setter Property="Text" Value="{Binding Source={StaticResource Loc}, Path=Triggers_Ready}" />
+                            <Setter Property="Text" Value="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_Ready}" />
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsWorking}" Value="True">
-                                    <Setter Property="Text" Value="{Binding Source={StaticResource Loc}, Path=Triggers_Working}" />
+                                    <Setter Property="Text" Value="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_Working}" />
                                     <Setter Property="Foreground" Value="#FFF09B2B" />
                                 </DataTrigger>
                             </Style.Triggers>
@@ -108,14 +108,14 @@
 
                 <TextBlock Margin="0 6 0 0"
                            Foreground="#FFB0B8C5"
-                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_TempCaption}" />
+                           Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_TempCaption}" />
                 <TextBlock Foreground="White" FontSize="16" Text="{Binding Temperature, StringFormat={}{0} C}">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsOverheated}" Value="True">
                                     <Setter Property="Foreground" Value="#FFFF8A8A" />
-                                    <Setter Property="Text" Value="{Binding Source={StaticResource Loc}, Path=Triggers_Overheat}" />
+                                    <Setter Property="Text" Value="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_Overheat}" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
@@ -125,7 +125,7 @@
                 <TextBlock Margin="0 8 0 0"
                            FontSize="11"
                            Foreground="#FFFFB3B3"
-                           Text="{Binding Source={StaticResource Loc}, Path=Triggers_Warning}">
+                           Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=Triggers_Warning}">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Setter Property="Visibility" Value="Collapsed" />

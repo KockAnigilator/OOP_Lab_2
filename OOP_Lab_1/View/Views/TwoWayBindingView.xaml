@@ -15,11 +15,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_Title}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_Title}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_Description}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -28,7 +28,7 @@
         <!-- Прямая привязка к свойству окна -->
         <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_WindowBinding}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_WindowBinding}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
@@ -43,12 +43,12 @@
                                         Mode=TwoWay,
                                         UpdateSourceTrigger=PropertyChanged}">
                     <TextBox.ToolTip>
-                        <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_WindowTooltip}"
+                        <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_WindowTooltip}"
                                    TextWrapping="Wrap" />
                     </TextBox.ToolTip>
                 </TextBox>
 
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_CurrentWindow}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_CurrentWindow}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBlock Text="{Binding TextFromWindow, RelativeSource={RelativeSource AncestorType=Window}}"
@@ -60,12 +60,12 @@
         <!-- Привязка через ViewModel -->
         <Border Grid.Row="2" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_ViewModelSection}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_ViewModelSection}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
                 <StackPanel Margin="0 6 0 4">
-                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_NameCaption}"
+                    <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_NameCaption}"
                                Foreground="#FFB0B8C5"
                                FontSize="12" />
                     <TextBox Height="28"
@@ -75,7 +75,7 @@
                              BorderThickness="1"
                              Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <TextBlock Margin="0 4 0 0" Foreground="White">
-                        <Run Text="{Binding Source={StaticResource Loc}, Path=TwoWay_NameCurrentFormat, Mode=OneWay}" />
+                        <Run Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_NameCurrentFormat, Mode=OneWay}" />
                         <Run Text=": " />
                         <Run Text="{Binding Name}" />
                     </TextBlock>
@@ -85,13 +85,13 @@
                     <CheckBox IsChecked="{Binding IsEnabled, Mode=TwoWay}"
                               VerticalAlignment="Center"
                               Margin="0 0 8 0" />
-                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_IsEnabledCaption}"
+                    <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_IsEnabledCaption}"
                                Foreground="#FFB0B8C5"
                                VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel Margin="0 6 0 0">
-                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=TwoWay_VolumeCaption}"
+                    <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_VolumeCaption}"
                                Foreground="#FFB0B8C5"
                                FontSize="12" />
                     <Slider Minimum="0"
@@ -116,7 +116,7 @@
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"
                    FontSize="11"
-                   Text="{Binding Source={StaticResource Loc}, Path=TwoWay_Note}" />
+                   Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=TwoWay_Note}" />
     </Grid>
 </UserControl>
 

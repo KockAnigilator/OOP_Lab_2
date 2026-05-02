@@ -14,11 +14,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Title}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneTime_Title}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Description}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneTime_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -26,12 +26,12 @@
 
         <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Compare}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneTime_Compare}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
 
                 <StackPanel Margin="0 8 0 4">
-                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Start}"
+                    <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneTime_Start}"
                                Foreground="#FFB0B8C5"
                                FontSize="12" />
                     <TextBlock FontSize="16"
@@ -40,7 +40,7 @@
                 </StackPanel>
 
                 <StackPanel Margin="0 8 0 4">
-                    <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneTime_Current}"
+                    <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneTime_Current}"
                                Foreground="#FFB0B8C5"
                                FontSize="12" />
                     <TextBlock FontSize="16"
@@ -55,7 +55,7 @@
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"
                    FontSize="11"
-                   Text="{Binding Source={StaticResource Loc}, Path=OneTime_Note}" />
+                   Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneTime_Note}" />
     </Grid>
 </UserControl>
 

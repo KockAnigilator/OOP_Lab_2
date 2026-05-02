@@ -14,11 +14,11 @@
 
         <Border Grid.Row="0" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF243044">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_Title}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_Title}"
                            Foreground="White"
                            FontWeight="Bold"
                            Margin="0 0 0 4" />
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_Description}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_Description}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
             </StackPanel>
@@ -26,7 +26,7 @@
 
         <Border Grid.Row="1" Padding="12" Margin="0 0 0 8" CornerRadius="6" Background="#FF1B2433">
             <StackPanel>
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_SourceValue}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_SourceValue}"
                            Foreground="#FF9CC1FF"
                            FontWeight="SemiBold" />
                 <TextBlock Margin="0 6 0 10"
@@ -35,14 +35,14 @@
                            FontSize="20"
                            FontWeight="Bold" />
 
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_BoundValue}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_BoundValue}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBlock Margin="0 4 0 10"
                            Text="{Binding SourceText, Mode=OneWay}"
                            Foreground="White" />
 
-                <TextBlock Text="{Binding Source={StaticResource Loc}, Path=OneWay_UserInput}"
+                <TextBlock Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_UserInput}"
                            Foreground="#FFB0B8C5"
                            FontSize="12" />
                 <TextBox Margin="0 4 0 0"
@@ -52,7 +52,7 @@
                          BorderBrush="#FF3D5A80"
                          BorderThickness="1" />
                 <TextBlock Margin="0 4 0 0"
-                           Text="{Binding Source={StaticResource Loc}, Path=OneWay_UserInputHint}"
+                           Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_UserInputHint}"
                            Foreground="#FF8A96A8"
                            FontSize="11" />
             </StackPanel>
@@ -63,7 +63,7 @@
                    TextWrapping="Wrap"
                    Foreground="#FF8A96A8"
                    FontSize="11"
-                   Text="{Binding Source={StaticResource Loc}, Path=OneWay_Note}" />
+                   Text="{Binding Source={x:Static loc:ExternalLibLocalizationProvider.Instance}, Path=OneWay_Note}" />
     </Grid>
 </UserControl>
 

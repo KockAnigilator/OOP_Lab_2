@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
 using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace View.Localization
 {
@@ -19,9 +20,6 @@ namespace View.Localization
         private static ResxLocalizationProvider _instance;
         public static ResxLocalizationProvider Instance => _instance ?? (_instance = new ResxLocalizationProvider());
 
-        /// <summary>
-        /// Текущая культура интерфейса (ru / en).
-        /// </summary>
         public CultureInfo CurrentCulture
         {
             get => _currentCulture;
@@ -29,9 +27,15 @@ namespace View.Localization
             {
                 if (_currentCulture.Equals(value))
                     return;
+
                 _currentCulture = value;
+
+                // 👇 Критически важно: меняем культуру потока
+                Thread.CurrentThread.CurrentCulture = value;
+                Thread.CurrentThread.CurrentUICulture = value;
+
                 OnPropertyChanged(nameof(CurrentCulture));
-                OnPropertyChanged(string.Empty); // обновить все привязанные строки
+                OnPropertyChanged(string.Empty);
             }
         }
 
